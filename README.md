@@ -64,5 +64,3 @@ $ make start
         - [X] DELETE /user/{username}/file/{filename} : Supprimer un fichier du dossier personnel
         - [X] POST /group/{groupname}/file : Téléverse un fichier dans le dossier personnel
         - [X] DELETE /group/{groupname}/file/{filename} : Supprimer un fichier du dossier personnel
-    - [ ] Créer un repo github
-    - [ ] Envoyé le lien du repo à kevinbalicot@gmail.com avec les noms des l'élèves
