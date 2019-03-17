@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+  php:
+    image: cours-apache/php
+    user: "1000"
+    volumes:
+      - './html:/var/www/html'
+      - composer_data:/root/.composer
+    configs:
+      - source: php_config
+        target: /usr/local/etc/php/php.ini
+    networks:
+      app: ~
+
+  apache:
+    image: 'cours-apache/apache2'
+    ports:
+      - '8888:80'
+    volumes:
+      - './apache2:/etc/apache2'
+      - './html:/var/www/html'
+    networks:
+      app: ~
+
+configs:
+  php_config:
+    file: ./.docker/php/php.ini
+
+volumes:
+  apache_data: ~
+  composer_data: ~
+
+networks:
+  app: ~
+  dev_reverse_proxy:
+    external: true
